@@ -56,9 +56,6 @@ techdocs:
     type: 'local' # Alternatives - 'googleGcs' or 'awsS3'. Read documentation for using alternatives.
     
 integrations:
-  github:
-    - host: github.com
-      token: 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
   subversion:
     baseUrl: http://localhost/svn/project/
     username: user
@@ -74,12 +71,5 @@ integrations:
 #    username: admin
 #    password: med@1234
 #    apiKey: c3ee55c1b9050bc6063013328f9804c93ce83adc
-auth:
-  environment: development
-  providers:
-    github:
-      development:
-        clientId: Iv1.c4c639ae232de11b
-        clientSecret: c3f3af911c007058381c49e71497b24c970abb3a
-      
+
       
