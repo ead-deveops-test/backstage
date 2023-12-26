@@ -1,0 +1,113 @@
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+metadata:
+  name: svn
+  title: New SVN repository
+  description: Creating a new SVN repository
+spec:
+  owner: backstage/techdocs-core
+  type: service
+
+  parameters:
+    - title: Provide some information
+      required:
+        # - svnServerUrl
+        # - username
+        # - password
+        - name
+      properties:
+        # svnServerUrl:
+        #   title: Hostname
+        #   type: string
+        #   description: URL of SVN server
+        # username:
+        #   title: Username
+        #   type: string
+        #   description: Username of SVN server
+        # password:
+        #   title: Password
+        #   type: string
+        #   description: Password of SVN server
+        # subRepoName:
+        #   title: Repo Name
+        #   type: string
+        #   description: Name of the new repository
+        name:
+          title: Name
+          type: string
+          description: Unique name of the component
+          ui:autofocus: true
+          ui:options:
+            rows: 5
+        moduleName:
+          title: Module Name
+          type: string
+          description: Name of the module
+        modality:
+          title: Modality
+          type: string
+          description: Name of the modality
+        bodyParts:
+          title: Body Parts
+          type: string
+          description: Name of the body parts
+        processingPurpose:
+          title: Processing Purpose
+          type: string
+          description: Enter processing purpose
+        protocol:
+          title: Protocol
+          type: string
+          description: Enter protocol
+        algorithmType:
+          title: Algorithm Type
+          type: string
+          description: Enter algorithmType
+        packageType:
+          title: Package Type
+          type: string
+          description: Enter packageType
+        supportedOs:
+          title: Supported OS
+          type: string
+          description: Enter supported OS
+        sourceCodeLanguage:
+          title: Source Code Language
+          type: string
+          description: Enter Source Code Language
+        developmentStatus:
+          title: Development Status
+          type: string
+          description: Enter Development Status
+        linkToProjectPage:
+          title: Link To Project Page
+          type: string
+          description: Enter Link To Project Page
+
+  steps:
+    - id: create-svn
+      name: Create SVN 
+      action: subversion:create
+      input:
+        # svnServerUrl: ${{ parameters.svnServerUrl }}
+        # targetPath: ${{ parameters.subRepoName }}
+        # username: ${{ parameters.username }}
+        # password: ${{ parameters.password }}
+        name: ${{ parameters.name }}
+        moduleName: ${{ parameters.moduleName }}
+        modality: ${{ parameters.modality }}
+        bodyParts: ${{ parameters.bodyParts }}
+        processingPurpose: ${{ parameters.processingPurpose }}
+        protocol: ${{ parameters.protocol }}
+        algorithmType: ${{ parameters.algorithmType }}
+        packageType: ${{ parameters.packageType }}
+        supportedOs: ${{ parameters.supportedOs }}
+        developmentStatus: ${{ parameters.developmentStatus }}
+        linkToProjectPage: ${{ parameters.linkToProjectPage }}
+  output:
+    links:
+      - title: Repository
+        url: ${{ steps['create-svn'].output.remoteUrl }}
+      - title: Open in catalog
+        icon: catalog
+        entityRef: ${{ steps['create-svn'].output.entityRef }}

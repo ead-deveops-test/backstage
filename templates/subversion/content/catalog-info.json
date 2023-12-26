@@ -1,0 +1,31 @@
+{
+  "apiVersion": "backstage.io/v1alpha1",
+  "kind": "Component",
+  "spec": {
+      "type": "service",
+      "lifecycle": "experimental",
+      "owner": "user:guest",
+      "projectName": "projectName",
+      "moduleName": "projectName",
+      "modality": "projectName",
+      "bodyParts": "projectName",
+      "processingPurpose": "projectName",
+      "protocol": "projectName",
+      "algorithmType": "projectName",
+      "packageType": "projectName",
+      "supportedOs": "projectName",
+      "sourceCodeLanguage": "projectName",
+      "developmentStatus": "projectName",
+      "linkToProjectPage": "projectName"
+  },
+  "metadata": {
+      "name": "Catalog-16",
+      "tags": ["subversion"],
+      "annotations": {
+          "backstage.io/managed-by-location": "url:http://18.181.180.137/svn/Test/Catalog-16",
+          "backstage.io/managed-by-origin-location": "url:http://18.181.180.137/svn/Test/Catalog-16",
+          "backstage.io/source-location": "url:http://18.181.180.137/svn/Test/Catalog-16",
+          "backstage.io/techdocs-ref": "dir:."
+      }
+  }
+}
