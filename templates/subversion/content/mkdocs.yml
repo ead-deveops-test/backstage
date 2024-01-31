@@ -1,8 +1,0 @@
-site_name: "sitename"
-site_description: 
-
-nav:
-  - Introduction: index.md
-
-plugins:
-  - techdocs-core
